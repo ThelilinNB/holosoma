@@ -601,6 +601,11 @@ def main(cfg: RetargetingConfig) -> None:
     Args:
         cfg: Configuration arguments
     """
+    # Change to script root directory so relative paths work correctly
+    # This ensures paths like "models/g1/g1_29dof.urdf" are relative to the package root
+    script_root = Path(__file__).resolve().parent.parent
+    os.chdir(script_root)
+    
     # Validate configuration
     validate_config(cfg)
 

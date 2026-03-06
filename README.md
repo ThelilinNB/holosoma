@@ -49,6 +49,13 @@ bash scripts/setup_inference.sh
 
 # For motion retargeting
 bash scripts/setup_retargeting.sh
+
+#bvh-->npy
+python src/holosoma_retargeting/holosoma_retargeting/data_utils/extract_global_positions.py   --input_dir src/holosoma_retargeting/holosoma_retargeting/demo_data/lafan_bvh   --output_dir src/holosoma_retargeting/holosoma_retargeting/demo_data/lafan
+
+#lafan 
+python /home/ps/lpl/holosoma/src/holosoma_retargeting/holosoma_retargeting/examples/robot_retarget.py  --data_path demo_data/lafan --task-type robot_only --task-name back_standard --data_format lafan --task-config.ground-range -10 10 --save_dir demo_results/g1/robot_only/lafan --retargeter.debug --retargeter.visualize --retargeter.foot-sticking-tolerance 0.02  --robot g1
+
 ```
 
 ### Training

@@ -711,7 +711,7 @@ def extract_foot_sticking_sequence_velocity(smpl_joints, demo_joints, foot_names
     right_toe_velocity = np.concatenate([[velocity_threshold + 1], right_toe_velocity])
 
     return [
-        {"L_Toe": left_toe_velocity[i] <= velocity_threshold, "R_Toe": right_toe_velocity[i] <= velocity_threshold}
+        {foot_names[0]: left_toe_velocity[i] <= velocity_threshold, foot_names[1]: right_toe_velocity[i] <= velocity_threshold}
         for i in range(len(smpl_joints))
     ]
 

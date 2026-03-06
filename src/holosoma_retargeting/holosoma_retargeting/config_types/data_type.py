@@ -192,6 +192,25 @@ JOINTS_MAPPINGS = {
         "LeftHand": "left_rubber_hand_link",
         "RightHand": "right_rubber_hand_link",
     },
+
+    ("lafan", "ym1"): {
+        "Spine1": "pelvis",
+        "LeftUpLeg": "left_leg_pitch_link",
+        "RightUpLeg": "right_leg_pitch_link",
+        "LeftLeg": "left_knee_pitch_link",
+        "RightLeg": "right_knee_pitch_link",
+        "LeftArm": "left_shoulder_yaw_link",
+        "RightArm": "right_shoulder_yaw_link",
+        "LeftForeArm": "left_elbow_roll_link",
+        "RightForeArm": "right_elbow_roll_link",
+        "LeftFoot": "left_ankle_intermediate_link",   # z≈0.067m flat-foot (≈LAFAN ankle 0.069m) → flat foot naturally
+        "RightFoot": "right_ankle_intermediate_link",  # mirrors G1's ankle_intermediate_1_link design
+        "LeftToeBase": "left_ankle_roll_sphere_5_link",
+        "RightToeBase": "right_ankle_roll_sphere_5_link",
+        "LeftHand": "left_wrist_yaw_link",
+        "RightHand": "right_wrist_yaw_link",
+    },
+
     ("lafan", "t1"): {
         "Spine1": "Trunk",
         "LeftUpLeg": "Hip_Pitch_Left",
@@ -226,6 +245,25 @@ JOINTS_MAPPINGS = {
         "L_Wrist": "left_rubber_hand_link",
         "R_Wrist": "right_rubber_hand_link",
     },
+
+    ("smplh", "ym1"): {
+        "Pelvis": "pelvis",
+        "L_Hip": "left_leg_pitch_link",
+        "R_Hip": "right_leg_pitch_link",
+        "L_Knee": "left_knee_pitch_link",
+        "R_Knee": "right_knee_pitch_link",
+        "L_Shoulder": "left_shoulder_roll_link",
+        "R_Shoulder": "right_shoulder_roll_link",
+        "L_Elbow": "left_elbow_pitch_link",
+        "R_Elbow": "right_elbow_pitch_link",
+        "L_Ankle": "left_ankle_intermediate_link",   # z≈0.067m flat-foot (≈LAFAN ankle 0.069m)
+        "R_Ankle": "right_ankle_intermediate_link",  # mirrors G1's ankle_intermediate_1_link design
+        "L_Toe": "left_ankle_roll_sphere_5_link",
+        "R_Toe": "right_ankle_roll_sphere_5_link",
+        "L_Wrist": "left_wrist_yaw_link",
+        "R_Wrist": "right_wrist_yaw_link",
+    },
+
     ("smplh", "t1"): {
         "Pelvis": "Trunk",
         "L_Hip": "Hip_Pitch_Left",
@@ -260,6 +298,25 @@ JOINTS_MAPPINGS = {
         "L_Wrist": "left_rubber_hand_link",
         "R_Wrist": "right_rubber_hand_link",
     },
+
+    ("smplx", "ym1"): {
+        "Pelvis": "pelvis",
+        "L_Hip": "left_leg_pitch_link",
+        "R_Hip": "right_leg_pitch_link",
+        "L_Knee": "left_knee_pitch_link",
+        "R_Knee": "right_knee_pitch_link",
+        "L_Shoulder": "left_shoulder_roll_link",
+        "R_Shoulder": "right_shoulder_roll_link",
+        "L_Elbow": "left_elbow_pitch_link",
+        "R_Elbow": "right_elbow_pitch_link",
+        "L_Ankle": "left_ankle_intermediate_link",   
+        "R_Ankle": "right_ankle_intermediate_link",  
+        "L_Foot": "left_ankle_roll_sphere_5_link",
+        "R_Foot": "right_ankle_roll_sphere_5_link",
+        "L_Wrist": "left_wrist_yaw_link",
+        "R_Wrist": "right_wrist_yaw_link",
+    },
+
     ("mocap", "g1"): {
         "Spine1": "pelvis_contour_link",
         "LeftUpLeg": "left_hip_pitch_link",
@@ -277,6 +334,25 @@ JOINTS_MAPPINGS = {
         "LeftFoot": "left_ankle_intermediate_1_link",
         "RightFoot": "right_ankle_intermediate_1_link",
     },
+
+    ("mocap", "ym1"): {
+        "Spine1": "pelvis",
+        "LeftUpLeg": "left_leg_pitch_link",
+        "RightUpLeg": "right_leg_pitch_link",
+        "LeftLeg": "left_knee_pitch_link",
+        "RightLeg": "right_knee_pitch_link",
+        "LeftArm": "left_shoulder_roll_link",
+        "RightArm": "right_shoulder_roll_link",
+        "LeftForeArm": "left_elbow_pitch_link",
+        "RightForeArm": "right_elbow_pitch_link",
+        "LeftFoot": "left_ankle_intermediate_link",   # z≈0.067m flat-foot (≈LAFAN ankle 0.069m)
+        "RightFoot": "right_ankle_intermediate_link",  # mirrors G1's ankle_intermediate_1_link design
+        "LeftToeBase": "left_ankle_roll_sphere_5_link",
+        "RightToeBase": "right_ankle_roll_sphere_5_link",
+        "LeftHandMiddle3": "left_wrist_yaw_link",
+        "RightHandMiddle3": "right_wrist_yaw_link",
+    },
+
     ("mocap", "t1"): {
         "Spine1": "Trunk",
         "LeftUpLeg": "Hip_Pitch_Left",

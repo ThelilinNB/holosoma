@@ -18,6 +18,7 @@ class RobotDefaults(TypedDict):
 _ROBOT_DEFAULTS: dict[str, RobotDefaults] = {
     "g1": {"robot_dof": 29, "robot_height": 1.32, "object_name": "ground"},
     "t1": {"robot_dof": 23, "robot_height": 1.2, "object_name": "ground"},
+    "ym1": {"robot_dof": 29, "robot_height": 1.28, "object_name": "ground"},
 }
 
 
@@ -154,6 +155,19 @@ class RobotConfig:
                 "left_foot_sphere_5_link",
                 "right_foot_sphere_5_link",
             ]
+        if self.robot_type == "ym1":
+            return [
+                "left_ankle_roll_sphere_1_link",
+                "right_ankle_roll_sphere_1_link",
+                "left_ankle_roll_sphere_2_link",
+                "right_ankle_roll_sphere_2_link",
+                "left_ankle_roll_sphere_3_link",
+                "right_ankle_roll_sphere_3_link",
+                "left_ankle_roll_sphere_4_link",
+                "right_ankle_roll_sphere_4_link",
+                "left_ankle_roll_sphere_5_link",
+                "right_ankle_roll_sphere_5_link",
+            ]
         raise ValueError(f"Invalid robot type: {self.robot_type}")
 
     FOOT_STICKING_LINKS = property(
@@ -179,6 +193,15 @@ class RobotConfig:
                     "33": -0.1,  # left wrist
                     "34": -0.1,
                     "35": -0.05,
+                }
+            )
+        if self.robot_type == "ym1":
+            base.update(
+                {
+                    "25": -0.5,  # left_wrist_pitch_joint
+                    "26": -0.3,  # left_wrist_yaw_joint
+                    "32": -0.5,  # right_wrist_pitch_joint
+                    "33": -0.3,  # right_wrist_yaw_joint
                 }
             )
 
@@ -207,6 +230,15 @@ class RobotConfig:
                     "35": 0.05,
                 }
             )
+        if self.robot_type == "ym1":
+            base.update(
+                {
+                    "25": 0.5,   # left_wrist_pitch_joint
+                    "26": 0.3,   # left_wrist_yaw_joint
+                    "32": 0.5,   # right_wrist_pitch_joint
+                    "33": 0.3,   # right_wrist_yaw_joint
+                }
+            )
 
         return base
 
@@ -219,6 +251,13 @@ class RobotConfig:
 
         if self.robot_type == "g1":
             return {"19": 0.2, "20": 0.2}  # waist yaw, waist roll
+        if self.robot_type == "ym1":
+            return {
+                "25": 0.1,  # left_wrist_pitch_joint
+                "26": 0.2,  # left_wrist_yaw_joint
+                "32": 0.1,  # right_wrist_pitch_joint
+                "33": 0.2,  # right_wrist_yaw_joint
+            }
         return {}
 
     MANUAL_COST = property(_manual_cost, doc="Get manual cost weights.")

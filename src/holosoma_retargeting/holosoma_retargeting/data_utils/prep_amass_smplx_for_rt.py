@@ -1,13 +1,19 @@
 from __future__ import annotations
 
 import os
-from dataclasses import dataclass
+import sys
 from pathlib import Path
+
+# 添加human_body_prior目录到Python路径（作为顶级包）
+sys.path.insert(0, str(Path(__file__).parent / "human_body_prior"))
+
+from dataclasses import dataclass
 
 import numpy as np
 import torch
 import tyro
-from human_body_prior.body_model.body_model import BodyModel  # type: ignore[import-not-found]
+
+from human_body_prior.body_model.body_model import BodyModel
 
 
 def load_ori_npz_file(npz_file_path, dest_fps=30):
